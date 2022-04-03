@@ -14,9 +14,12 @@ public class User {
         this.id = id;
         this.name = name;
         this.type = type;
-        this.discount = discount;
         this.total = total;
+        this.discount = discount;
         this.netAmount = netAmount;
+    }
+
+    public User(long id, String anas, UserType employee, int discount) {
     }
 
 
@@ -48,7 +51,7 @@ public class User {
         return discount;
     }
 
-    public void setDiscount(double discount) {
+    public void setDiscount(UserType type) {
         if (type == UserType.CUSTOMER) {
             this.discount = 0.1;
         } else {
@@ -79,5 +82,6 @@ public class User {
 
         }
         }
+
 
 }
