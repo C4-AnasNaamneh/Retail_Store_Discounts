@@ -1,5 +1,6 @@
 package com.example.demo.order;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -7,7 +8,12 @@ import java.util.List;
 @Service
 public class OrderService {
 
+
+
+
+
     public List<Order> getOrders(){
+
         return List.of(
                 new Order(
                         1L,
@@ -40,4 +46,9 @@ public class OrderService {
     }
 
 
+    public void addNewOrder( @JsonProperty Order order) {
+
+        System.out.println(order);
+
+    }
 }

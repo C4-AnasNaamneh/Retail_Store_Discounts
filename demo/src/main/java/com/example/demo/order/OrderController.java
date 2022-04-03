@@ -1,14 +1,13 @@
 package com.example.demo.order;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/order")
+
 public class OrderController {
 
     private final OrderService orderService;
@@ -22,6 +21,14 @@ public class OrderController {
     public List<Order> getOrders(){
 
         return  orderService.getOrders();
+    }
+
+    @PostMapping
+    public void registerNewOrder(@RequestBody Order order){
+
+        orderService.addNewOrder(order);
+
+
     }
 
 

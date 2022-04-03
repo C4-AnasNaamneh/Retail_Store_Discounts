@@ -1,5 +1,7 @@
 package com.example.demo.order;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Order {
 
     private Long id;
@@ -12,7 +14,7 @@ public class Order {
     }
 
 
-    public Order(Long id, String name, Integer userDiscount, Integer subTotal, Integer totalAmount) {
+    public Order(@JsonProperty ("id") Long id,@JsonProperty ("name") String name,@JsonProperty ("userDiscount") Integer userDiscount,@JsonProperty ("subTotal") Integer subTotal,@JsonProperty ("totalAmount") Integer totalAmount) {
         this.id = id;
         this.name = name;
         this.userDiscount = userDiscount;
