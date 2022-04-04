@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 @RestController
 public class UserController {
@@ -18,9 +19,9 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-//    @GetMapping ("/users/{id}")
-//    public <id> User getUserById(@PathVariable ("id") Long id){
-//        return  userService.getUserById(id);
-//    }
+    @GetMapping ("/users/{id}")
+    public Stream<User> getUserById(@PathVariable ("id") String id){
+        return  userService.getUserById(id);
+    }
 
 }

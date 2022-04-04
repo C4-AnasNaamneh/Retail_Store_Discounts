@@ -2,7 +2,7 @@ package com.example.demo.user;
 
 public class User {
 
-    private Long id;
+    private String id;
     private String name;
     private UserType type;
     private double discount;
@@ -10,7 +10,7 @@ public class User {
     private double netAmount;
 
 
-    public User(Long id, String name, UserType type, double discount, double total, double netAmount) {
+    public User(String id, String name, UserType type, double discount, double total, double netAmount) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -19,15 +19,15 @@ public class User {
         this.netAmount = netAmount;
     }
 
-    public User(long id, String anas, UserType employee, int discount) {
+    public User(String id, String anas, UserType employee, int discount) {
     }
 
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
